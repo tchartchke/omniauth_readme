@@ -243,3 +243,16 @@ Implementing the OAuth protocol yourself is extremely complicated. Using the Omn
 [omniauth]: https://github.com/intridea/omniauth
 [list_of_strategies]: https://github.com/omniauth/omniauth/wiki/List-of-Strategies
 
+
+## Additional Notes by Char (AS OF 2021-03-05)
+Include gem omniauth-rails_csrf_protection
+
+`gem 'omniauth-rails_csrf_protection'`
+
+Must be `POST` request for link to `/auth/:provider`
+
+```erb
+  <%= form_tag('/auth/facebook') do %>
+  <%= submit_tag "Log in with Facebook!" %>
+  <% end %>
+```
